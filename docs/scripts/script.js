@@ -19,8 +19,23 @@ function z() {
 
 function y() {
         let starty = document.getElementById('startyear').value;
-        if (starty.isNumber() == False) {
-                
+        let num1 = Number(starty)
+        if (Number.isInteger(num1) == false) {
+              document.getElementById('outcome1').innerText = "idiot";  
         }
         let divided4 = starty%4
+        let divided100 = starty%100
+        let divided400 = starty%400
+        if (divided4 != 0) {
+                document.getElementById('outcome1').innerText = "not a leap year";
+        }
+        else if (divided100 != 0) {
+                document.getElementById('outcome1').innerText = "cool, " + starty + " is a leap year";
+        }
+        else if (divided400 != 0) {
+                document.getElementById('outcome1').innerText = "not a leap year";
+        }
+        else if (divided400 == 0) {
+                document.getElementById('outcome1').innerText = "cool, " + starty + " is a leap year";
+        }
 }
