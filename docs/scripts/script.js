@@ -39,3 +39,23 @@ function y() {
                 document.getElementById('outcome1').innerText = "cool, " + starty + " is a leap year";
         }
 }
+
+function x() {
+        let initial = document.getElementById('list').value;
+        let firstlist = initial.split(", ")
+        let storage = []
+        let booly = false
+        for (let x of firstlist) {
+                if (storage.includes(x) == true) {
+                document.getElementById('outcome2').innerText = x + " is mentioned more than once";
+                let booly = true
+                { break; }
+                }
+                else {
+                storage.push(x)
+                }
+        }
+        if (booly == false) {
+                document.getElementById('outcome2').innerText = "no duplicates here :)";
+        }
+}
